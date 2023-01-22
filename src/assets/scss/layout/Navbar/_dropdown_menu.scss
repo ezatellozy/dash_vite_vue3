@@ -69,7 +69,7 @@
           display: flex;
           padding: 10px 0;
 
-          & > span {
+          &>span {
             display: block;
           }
 
@@ -131,7 +131,7 @@
   }
 }
 
-body.ltr {
+body.rtl {
   .nav_dropdown {
     &.profile_dropdown {
       right: unset !important;

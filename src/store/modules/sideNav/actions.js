@@ -1,5 +1,9 @@
 import router from '@/router'
-console.log(router.currentRoute.value)
+import { computed } from 'vue'
+
+const currentRoute = computed(() => router.currentRoute.value)
+
+console.log(currentRoute._value)
 export default {
   onResize(context) {
     context.dispatch('calcSideBarWidth')

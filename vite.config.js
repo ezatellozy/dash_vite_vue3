@@ -1,9 +1,13 @@
 import { defineConfig } from 'vite'
+import { fileURLToPath, URL } from 'node:url'
+import { resolve, dirname } from 'node:path'
 import vue from '@vitejs/plugin-vue'
+import VueI18nPlugin from '@intlify/unplugin-vue-i18n/vite'
 import path from 'path'
 
 // https://vitejs.dev/config/
 export default defineConfig({
+  ssr: true,
   server: {
     port: 8080,
     host: '0.0.0.0',
@@ -21,11 +25,24 @@ export default defineConfig({
       '@': path.resolve(__dirname, './src'),
     },
   },
-  plugins: [vue()],
+
+  transpileDependencies: ['vuetify'],
+  plugins: [
+    vue(),
+
+    VueI18nPlugin({
+      include: resolve(
+        dirname(fileURLToPath(import.meta.url)),
+        './src/locales/**',
+      ),
+    }),
+  ],
+
   css: {
     preprocessorOptions: {
       scss: {
-        additionalData: `@import "./src/assets/scss/abstracts/variables.scss";@import "./src/assets/scss/abstracts/mixins.scss";`,
+        additionalData: `@import "./src/assets/scss/abstracts/variables.scss";
+        @import "./src/assets/scss/abstracts/mixins.scss";`,
       },
     },
   },

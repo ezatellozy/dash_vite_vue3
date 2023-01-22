@@ -1,5 +1,5 @@
 import { createApp } from 'vue'
-import './style.css'
+
 import router from './router'
 import store from './store'
 import App from './App.vue'
@@ -7,8 +7,8 @@ import i18n from './i18n'
 import helpers from './Mixins/helpers'
 import axios from 'axios'
 import VueAxios from 'vue-axios'
-
-import './assets/scss/main.scss'
+import vuetify from './plugins/vuetify'
+import '@/assets/scss/main.scss'
 
 const USER_TOKEN = store.getters['auth_module/currentUser'].token
 const CURRENT_LANG = store.getters['lang_module/lang']
@@ -60,5 +60,6 @@ app.mixin(helpers)
 app.use(router)
 app.use(VueAxios, axios)
 app.use(i18n)
+app.use(vuetify)
 app.use(store)
 app.mount('#app')

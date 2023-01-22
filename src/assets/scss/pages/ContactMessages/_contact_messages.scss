@@ -1,4 +1,5 @@
 .contact_message {
+
     // .sender_data {
     //     @include flexStartAlignment;
     //     flex-direction: column;
@@ -61,35 +62,44 @@
         @include flexStartAlignment;
         flex-direction: column;
         flex-grow: 4;
+
         li {
             @include flexStartAlignment;
             margin-bottom: 20px;
             width: 100%;
+
             .image {
                 margin-inline-end: 10px;
+
                 img {
                     width: 50px;
                     height: 50px;
                     border-radius: 50%;
                 }
             }
+
             .content__message {
                 max-width: 50%;
                 border-radius: 5px;
                 padding: 8px 10px;
+
                 p {
                     font-size: 16px;
                     margin-bottom: 0;
                 }
             }
+
             &.sender__message {
                 justify-content: flex-start !important;
+
                 .content__message {
                     background-color: var(--mainColor-2);
                 }
             }
+
             &.reciver__message {
                 justify-content: flex-end !important;
+
                 .content__message {
                     color: var(--mainColor-2);
                     background-color: var(--blackColor);
@@ -97,6 +107,7 @@
             }
         }
     }
+
     .chart_component {
         .icon {
             span {
@@ -105,6 +116,7 @@
                 }
             }
         }
+
         h3.number {
             font-size: 19px;
             margin-bottom: 10px;

@@ -1,4 +1,5 @@
 import i18n from '../../../i18n'
+import Cookies from 'js-cookie'
 
 export default {
   handleLang(context) {
@@ -9,8 +10,9 @@ export default {
       lang = default_lang
     }
 
-    localStorage.setItem('zoz_dash_Lang', lang)
+    Cookies.set('zoz_dash_Lang', lang)
     document.documentElement['lang'] = lang
+
     i18n.locale = lang
 
     if (lang == 'ar') {
@@ -26,10 +28,12 @@ export default {
     let lang
 
     if (conetxt.getters.lang == 'ar') {
-      localStorage.setItem('zoz_dash_Lang', 'en')
+      Cookies.set('zoz_dash_Lang', 'en')
+
       lang = 'en'
     } else if (conetxt.getters.lang == 'en') {
-      localStorage.setItem('zoz_dash_Lang', 'ar')
+      Cookies.set('zoz_dash_Lang', 'ar')
+
       lang = 'ar'
     }
 

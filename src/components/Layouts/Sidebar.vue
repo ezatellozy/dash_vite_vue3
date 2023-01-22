@@ -13,12 +13,12 @@
           <router-link to="/">
             <img
               class="img-fluid"
-              width="120px"
+              width="120"
               v-if="current_theme == 'light'"
               src="@/assets/images/icons/logo.svg"
             />
             <img
-              width="120px"
+              width="120"
               class="img-fluid"
               v-else
               src="@/assets/images/icons/logo.svg"
@@ -118,17 +118,17 @@
       </span>
 
       <!-- Upper Scection -->
-      <!-- <div class="top_logo" :class="{ smallLogo: !menueMinWidth }">
+      <div class="top_logo" :class="{ smallLogo: !menueMinWidth }">
         <div class="logo">
           <router-link to="/">
             <img
               v-if="current_theme == 'light'"
-              src="@/assets/images/icons/logo_light.svg"
+              src="@/assets/images/icons/logo.svg"
             />
-            <img v-else src="@/assets/images/icons/logo_dark.png" />
+            <img v-else src="@/assets/images/icons/logo.svg" />
           </router-link>
         </div>
-      </div> -->
+      </div>
 
       <v-list>
         <template v-for="item in sidebar">
@@ -224,6 +224,8 @@
 </template>
 
 <script>
+import i18n from '@/i18n'
+
 import { mapGetters } from 'vuex'
 
 export default {
@@ -259,50 +261,65 @@ export default {
       this.$refs.smallSidebar.classList.remove('active')
     },
 
-    manipulateTheSideBar() {
+    async manipulateTheSideBar() {
+      const Json_Sidebar = await fetch(
+        `../src/locales/${i18n.global.locale.value}.json`,
+      )
+        .then((res) => res.json())
+        .then((ress) => ress.sidebar)
       // Convert 'JSON' Object to JS Object
-      // const Json_Sidebar = JSON.parse(JSON.stringify(this.$t('sidebar')))
-      // Json_Sidebar.forEach((el) => {
-      //   // IF Dropdown
-      //   if (el.items) {
-      //     // ======== Check Nested
-      //     let inside_nested = false
-      //     el.items.forEach((element) => {
-      //       if (element.items) {
-      //         inside_nested = true
-      //       }
-      //     })
-      //     // ======== IF Nested Else
-      //     if (inside_nested) {
-      //       el.items.forEach((subEl) => {
-      //         // Active
-      //         subEl.activeRoutesMatch = subEl.items[0].url
-      //         // DropDown
-      //         if (this.$route.path.includes(subEl.activeRoutesMatch)) {
-      //           subEl.active = true
-      //         } else {
-      //           subEl.active = false
-      //         }
-      //       })
-      //       el.activeRoutesMatch = el.parentUrl
-      //       // DropDown
-      //       if (this.$route.path.includes(el.activeRoutesMatch)) {
-      //         el.active = true
-      //       } else {
-      //         el.active = false
-      //       }
-      //     } else {
-      //       el.activeRoutesMatch = el.items[0].url
-      //       // DropDown
-      //       if (this.$route.path.includes(el.activeRoutesMatch)) {
-      //         el.active = true
-      //       } else {
-      //         el.active = false
-      //       }
-      //     }
-      //   }
-      // })
-      // this.sidebar = Json_Sidebar
+      // if (i18n.global.locale.value == 'ar') {
+      //   Json_Sidebar = JSON.parse(JSON.stringify(enLocale))
+      // } else {
+      //   Json_Sidebar = JSON.parse(JSON.stringify(enLocale))
+      // }
+
+      // Json_Sidebar.map((el) => console.log(el))
+
+      // Json_Sidebar.map((el) => console.log(el))
+      // console.log(JSON.parse(JSON.stringify(this.$t('sidebar'))))
+      // console.log(Json_Sidebar)
+      Json_Sidebar.forEach((el) => {
+        // IF Dropdown
+        if (el.items) {
+          // ======== Check Nested
+          let inside_nested = false
+          el.items.forEach((element) => {
+            if (element.items) {
+              inside_nested = true
+            }
+          })
+          // ======== IF Nested Else
+          if (inside_nested) {
+            el.items.forEach((subEl) => {
+              // Active
+              subEl.activeRoutesMatch = subEl.items[0].url
+              // DropDown
+              if (this.$route.path.includes(subEl.activeRoutesMatch)) {
+                subEl.active = true
+              } else {
+                subEl.active = false
+              }
+            })
+            el.activeRoutesMatch = el.parentUrl
+            // DropDown
+            if (this.$route.path.includes(el.activeRoutesMatch)) {
+              el.active = true
+            } else {
+              el.active = false
+            }
+          } else {
+            el.activeRoutesMatch = el.items[0].url
+            // DropDown
+            if (this.$route.path.includes(el.activeRoutesMatch)) {
+              el.active = true
+            } else {
+              el.active = false
+            }
+          }
+        }
+      })
+      this.sidebar = Json_Sidebar
     },
   },
 

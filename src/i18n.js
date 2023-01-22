@@ -12,8 +12,8 @@ import ar from './locales/ar.json'
 
 export default createI18n({
   legacy: false,
-  locale: Cookies.get('locale') || 'ar',
-  fallbackLocale: Cookies.get('locale') || 'ar',
+  locale: Cookies.get('zoz_dash_Lang') || 'ar',
+  fallbackLocale: Cookies.get('zoz_dash_Lang') || 'ar',
 
   messages: {
     ar,

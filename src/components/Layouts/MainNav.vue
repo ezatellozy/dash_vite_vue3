@@ -152,13 +152,13 @@
               </transition>
             </li>
             <!-- Theme -->
-            <li
+            <!-- <li
               v-if="current_theme == 'dark' && !isSmallScreen"
               @click="changeTheme('light')"
             >
               <i class="fal fa-sun"></i>
             </li>
-            <!-- <li
+            <li
               v-if="current_theme == 'light' && !isSmallScreen"
               @click="changeTheme('dark')"
             >
@@ -249,8 +249,8 @@ export default {
     }),
   },
   mounted() {
-    this.getNotifications()
-    this.getUserData()
+    // this.getNotifications()
+    // this.getUserData()
     document.querySelector('body').addEventListener('click', () => {
       this.profile_menu = false
       this.notification_menu = false
