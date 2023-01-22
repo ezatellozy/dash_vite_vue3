@@ -1,6 +1,5 @@
 import { createApp } from 'vue'
 import { createStore } from 'vuex'
-
 import lang from './modules/lang/index.js'
 import sideNav from './modules/sideNav/index.js'
 import auth from './modules/Auth/index.js'

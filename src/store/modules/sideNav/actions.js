@@ -1,5 +1,5 @@
-import router from '../../../router/index'
-
+import router from '@/router'
+console.log(router.currentRoute.value)
 export default {
   onResize(context) {
     context.dispatch('calcSideBarWidth')
@@ -21,7 +21,7 @@ export default {
 
     body.style.paddingTop = '100px'
 
-    if (router.app._route.name == 'Login') {
+    if (router.currentRoute._value.name == 'Login') {
       body.style.padding = '0'
     } else {
       if (lang == 'ar') {

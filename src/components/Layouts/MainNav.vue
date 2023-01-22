@@ -200,13 +200,13 @@ export default {
   },
   methods: {
     getNotifications() {
-      this.$axios.get('notification').then((data) => {
+      this.axios.get('notification').then((data) => {
         this.notifications = data.data.data
         this.unreadNotifCount = this.notifications.length
       })
     },
     getUserData() {
-      this.$axios.get('profile').then((data) => {
+      this.axios.get('profile').then((data) => {
         this.userDataExist = data.data.data
       })
     },

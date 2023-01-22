@@ -46,7 +46,7 @@
                   type="text"
                   class="form-control"
                   @input="
-                    helper_checkIfInputIsEmpty()
+                    helper_checkIfInputIsEmpty
                     addDataLocalStorage()
                   "
                   v-model.trim="data.en.name"
@@ -65,7 +65,7 @@
                   type="text"
                   class="form-control"
                   @input="
-                    helper_checkIfInputIsEmpty()
+                    helper_checkIfInputIsEmpty
                     addDataLocalStorage()
                   "
                   v-model.trim="data.ar.slug"
@@ -84,7 +84,7 @@
                   type="text"
                   class="form-control"
                   @input="
-                    helper_checkIfInputIsEmpty()
+                    helper_checkIfInputIsEmpty
                     addDataLocalStorage()
                   "
                   v-model.trim="data.en.slug"
@@ -103,7 +103,7 @@
                   type="text"
                   class="form-control"
                   @input="
-                    helper_checkIfInputIsEmpty()
+                    helper_checkIfInputIsEmpty
                     addDataLocalStorage()
                   "
                   v-model.trim="data.ar.nationality"
@@ -122,7 +122,7 @@
                   type="text"
                   class="form-control"
                   @input="
-                    helper_checkIfInputIsEmpty()
+                    helper_checkIfInputIsEmpty
                     addDataLocalStorage()
                   "
                   v-model.trim="data.en.nationality"
@@ -141,7 +141,7 @@
                   type="text"
                   class="form-control"
                   @input="
-                    helper_checkIfInputIsEmpty()
+                    helper_checkIfInputIsEmpty
                     addDataLocalStorage()
                   "
                   v-model.trim="data.short_name"
@@ -160,7 +160,7 @@
                   type="text"
                   class="form-control"
                   @input="
-                    helper_checkIfInputIsEmpty()
+                    helper_checkIfInputIsEmpty
                     addDataLocalStorage()
                   "
                   v-model.trim="data.ar.currency"
@@ -179,7 +179,7 @@
                   type="text"
                   class="form-control"
                   @input="
-                    helper_checkIfInputIsEmpty()
+                    helper_checkIfInputIsEmpty
                     addDataLocalStorage()
                   "
                   v-model.trim="data.en.currency"
@@ -218,7 +218,7 @@
                   type="number"
                   class="form-control"
                   @input="
-                    helper_checkIfInputIsEmpty()
+                    helper_checkIfInputIsEmpty
                     addDataLocalStorage()
                   "
                   v-model.trim="data.phone_code"
@@ -237,7 +237,7 @@
                   type="number"
                   class="form-control"
                   @input="
-                    helper_checkIfInputIsEmpty()
+                    helper_checkIfInputIsEmpty
                     addDataLocalStorage()
                   "
                   v-model.trim="data.phone_number_limit"
