@@ -1,0 +1,48 @@
+{
+  "sidebar": [
+    {
+      "action": "fal fa-signal-4",
+      "title": "statistics",
+      "url": "/"
+    },
+    {
+      "action": "fal fa-table",
+      "title": "Tables",
+      "url": "/tables"
+    },
+    {
+      "action": "fal fa-th-large",
+      "title": "التقييمات",
+     "url":"all-rates"
+  }
+  ],
+  
+  "navbar": {
+    "notification": {
+      "topTitle_1": "New",
+      "topTitle_2": "App Notification",
+      "item": {
+        "title": "Have New Request!"
+      }
+    },
+    "userMenu": {
+      "profile": "Profile",
+      "editProfile": "Edit Profile",
+      "chats": "Conversation",
+      "logout": "Logout"
+    }
+  },
+  "table": {
+    "loadingData": "Loading please wait",
+    "noData": "No Data",
+    "singleSelect": "single Select",
+    "search": "search",
+    "lessThan": "less than",
+
+    "deletedialog": {
+      "areYouSure": "are you sure ?",
+      "cancel": "cancel",
+      "ok": "ok"
+    }
+  }
+}

@@ -1,0 +1,55 @@
+.custom_card {
+  background: var(--cardBgColor);
+  border-radius: 12px;
+  box-shadow: 0 0 0;
+  padding: 10px;
+  margin-bottom: 20px;
+
+  &.hideOverflow {
+    overflow: hidden;
+  }
+
+  &.loader_bg {
+    background-color: var(--mainBgColor);
+  }
+
+  &.table_card {
+    padding: 0;
+  }
+
+  .card-header {
+    @include flexSpaceBetweenAlignment;
+    background-color: transparent;
+    border: 0;
+    h4 {
+      font-size: var(--Meduim);
+      font-weight: 600;
+    }
+    h5 {
+      font-size: var(--Meduim) + 1px;
+      font-weight: 600;
+      text-align: center;
+      color: var(--mainColor-2);
+    }
+    a {
+      font-size: 14px;
+      i {
+        margin-left: 5px;
+        margin-right: 5px;
+      }
+    }
+  }
+
+  span.sub-tit {
+    font-size: 14px;
+    display: inline-block;
+    margin-bottom: 17px;
+  }
+}
+
+.home_custom {
+  h5 {
+    font-size: 17px;
+    color: var(--cardTitle);
+  }
+}

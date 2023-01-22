@@ -1,0 +1,200 @@
+.chart_component {
+  background-color: var(--cardBgColor);
+  border-radius: 15px;
+  padding: 15px 20px;
+  @include flexStartAlignment;
+  align-items: start;
+  flex-direction: column;
+  box-shadow: 0 0 10px #ebebeb;
+  position: relative;
+  // width: 300px;
+
+  &::after {
+    position: absolute;
+    content: "";
+    width: 112px;
+    height: 80px;
+    background-image: url("~@/assets/images/icons/logo.svg");
+    background-size: 80px;
+    left: 5px;
+    opacity: 0.3;
+    top: 11px;
+  }
+
+  main {
+    display: flex;
+    flex-direction: column;
+
+    .title {
+      margin-bottom: 15px;
+      color: var(--mainColor-2);
+    }
+  }
+
+  .icon {
+    @include flexStartAlignment;
+    column-gap: 15px;
+
+    .number {
+      margin: 0;
+      font-size: 22px;
+      word-break: break-all;
+    }
+
+    i {
+      font-size: 30px;
+      color: var(--mainColor-2);
+    }
+  }
+}
+
+.chart_card {
+  @include mainShadow();
+  padding: 20px 15px;
+  background-color: var(--cardBgColor);
+  border-radius: 15px;
+
+  .chart_title {
+    margin-bottom: 25px;
+
+    .title_text {
+      color: var(--cardTitle);
+      margin-bottom: 7px;
+      display: inline-block;
+      font-size: 17px !important;
+    }
+
+    .chart_val {
+      font-size: 17px;
+      margin-bottom: 0;
+    }
+  }
+
+  &>div {
+    min-height: unset !important;
+
+    .apexcharts-canvas {
+      // height: 340px !important;
+
+      .apexcharts-toolbar {
+        display: none !important;
+      }
+    }
+  }
+
+  .chart_description {
+    .desc {
+      text-align: end;
+      margin-top: 12px;
+      margin-bottom: 0;
+      padding-inline: 10px;
+      font-size: 16px;
+      color: var(--main_theme_clr);
+    }
+  }
+
+  .apexcharts-svg {
+    .apexcharts-xaxis-texts-g {
+      .apexcharts-text {
+        font-family: "Neo Sans Arabic" !important;
+        font-size: 12px;
+
+        tspan {
+          fill: var(--mainColor-1) !important;
+        }
+      }
+    }
+
+    .apexcharts-yaxis-texts-g {
+      .apexcharts-text {
+        font-family: "Neo Sans Arabic" !important;
+        font-size: 12px;
+
+        tspan {
+          fill: var(--mainColor-1) !important;
+        }
+      }
+    }
+
+    .apexcharts-inner {
+      .apexcharts-datalabels-group {
+        .apexcharts-text {
+          font-family: "Neo Sans Arabic" !important;
+          font-size: 12px;
+
+          tspan {
+            fill: var(--mainColor-1) !important;
+          }
+
+          &.apexcharts-datalabel-value {
+            fill: var(--mainColor-1) !important;
+          }
+        }
+      }
+    }
+  }
+
+  .apexcharts-tooltip {
+    // display: none !important;
+    background-color: var(--cardBgColor) !important;
+    border: 1px solid var(--border_clr) !important;
+    color: var(--mainColor-1) !important;
+    font-family: "Neo Sans Arabic" !important;
+
+    display: none !important;
+
+    .apexcharts-tooltip-title {
+      background-color: var(--theme_main_bg_clr) !important;
+      border-bottom: 1px solid var(--border_clr) !important;
+      color: var(--mainColor-1) !important;
+      font-family: "Neo Sans Arabic" !important;
+    }
+
+    .apexcharts-tooltip-y-group {
+
+      .apexcharts-tooltip-text-y-label,
+      .apexcharts-tooltip-text-y-value {
+        font-family: "Neo Sans Arabic" !important;
+      }
+    }
+  }
+
+  .apexcharts-xaxistooltip {
+    display: none !important;
+  }
+
+  .apexcharts-legend {
+    .apexcharts-legend-series {
+      margin-inline: 10px !important;
+
+      .apexcharts-legend-text {
+        color: var(--mainColor-1) !important;
+        font-family: "Neo Sans Arabic" !important;
+      }
+    }
+  }
+
+  &>div {
+    @include flexCenterAlignment;
+  }
+}
+
+.please-search {
+  text-align: center;
+  height: 40vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+  .icon {
+    font-size: 90px;
+    line-height: 0;
+    margin-bottom: 20px;
+  }
+
+  h3 {
+    margin: 0;
+    font-size: 25px;
+  }
+}

@@ -1,0 +1,70 @@
+.tabs_wrapper {
+  .v-sheet{
+    &.v-card {
+      &:not(.v-sheet--outlined) {
+        box-shadow: none !important;
+      }
+    }
+
+    .v-tabs {
+      padding-block: 15px;
+      border-bottom: 1px dashed var(--mainColor-2);
+      .v-item-group {
+        background: var(--cardBgColor) !important;
+        .v-slide-group__wrapper {
+          .v-slide-group__content {
+            justify-content: start;
+            align-items: center;
+            column-gap: 15px;
+            .v-tabs-slider-wrapper {
+              display: none;
+            }
+            .v-tab {
+              @include buttonStyle2;
+              width: 140px;
+              height: 45px;
+              &::before {
+                content: "";
+                opacity: 1;
+                display: block !important;
+                position: absolute  !important;
+                top: -2px  !important;
+                right: auto  !important;
+                left: 8%  !important;
+                width: 30%  !important;
+                height: 2px  !important;
+                background-color: var(--cardBgColor)  !important;
+                @include transitioning(0.4s);
+              }
+              &:hover {
+                &::before {
+                  left: 55% !important;
+                  opacity: 1;
+                } 
+              }
+              &.v-tab--active {
+                color: var(--color-wight);
+                background-color: var(--mainColor-2);
+                &::before,
+                &::after {
+                  display: none !important;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+
+    .v-window  {
+      .v-window__container {
+        .v-window-item {
+          .v-card {
+            background: var(--cardBgColor) !important;
+            padding: 25px;
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,111 @@
+.login {
+
+    // background-image: url("../images/pages/login/login_main_bg.jpg");
+    // background-position: center;
+    // background-size: cover;
+    // background-repeat: no-repeat;
+    // @include flexCenterAlignment;
+    .login_box {
+        width: 100%;
+        display: flex;
+        height: 100vh;
+
+        .log-img {
+            margin-bottom: 15px;
+
+            img {
+                object-fit: contain;
+            }
+        }
+
+        .custom_card {
+            background: #fff !important;
+        }
+
+        .card-header {
+            text-align: center;
+            display: block;
+
+            h4 {
+                font-size: calc(var(--Large) - 2px);
+                color: var(--blackColor);
+                font-weight: 600;
+            }
+
+            p {
+                font-size: calc(15px + 1px);
+                color: var(--blackColor);
+            }
+        }
+
+        @media (max-width: 767px) {
+            width: 100%;
+        }
+
+        .inputs {
+            border-radius: 0;
+            margin: 0;
+            padding: 4rem;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+
+            .form-group {
+                input:not(:last-child) {
+                    margin-bottom: 2.8rem;
+                }
+
+                .form-control {
+                    border: 0;
+                    border-bottom: 1px solid var(--mainColor-4);
+                    border-radius: 0;
+
+                    &:focus {
+                        border-bottom: 1px solid var(--mainColor-2);
+                        color: var(--mainColor-1);
+                        background-color: unset;
+                        outline: 0;
+                        box-shadow: none;
+                    }
+                }
+            }
+
+            .footer {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                flex-wrap: wrap;
+
+                .forgot_Password {
+                    font-size: 1.3rem;
+                    margin-bottom: 0.8rem;
+                }
+
+                .vs-checkbox-con {
+                    font-size: 1.6rem;
+                    margin-bottom: 0.8rem;
+                }
+            }
+
+            .button-main {
+                display: block;
+                margin: 1rem auto !important;
+                color: #fff;
+            }
+        }
+
+        .image {
+            width: 50%;
+
+            @media (max-width: 992px) {
+                display: none;
+            }
+
+            img {
+                height: 100%;
+                width: 100%;
+            }
+        }
+    }
+}

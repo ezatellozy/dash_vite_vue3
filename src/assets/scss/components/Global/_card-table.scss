@@ -1,0 +1,158 @@
+.card-table {
+    position: relative;
+    overflow: hidden;
+    border: 2px solid var(--mainColor-2);
+    border-radius: 10px;
+
+    .image {
+        width: 100%;
+        height: 200px;
+        position: relative;
+        overflow: hidden;
+
+        // margin-bottom: 25px;
+        img {
+            width: 100%;
+            height: 100%;
+        }
+
+        .types {
+            display: flex;
+            position: absolute;
+            top: 10px;
+            right: 10px;
+
+            li {
+                padding: 2px 10px;
+                background: #bc8500;
+                margin-left: 5px;
+                border-radius: 50px;
+                font-size: 14px;
+
+                span {
+                    content: "";
+                }
+            }
+        }
+    }
+
+    .details {
+        padding: 0 15px;
+        position: relative;
+        z-index: 1;
+
+        h3 {
+            display: flex;
+            font-size: 17px;
+            color: var(--blackColor);
+            margin-bottom: 20px;
+
+            span {
+                font-weight: bold;
+                margin-left: 5px;
+            }
+        }
+
+        h4 {
+            display: flex;
+            font-size: 15px;
+            margin-bottom: 15px;
+            color: var(--blackColor);
+
+            span {
+                font-weight: bold;
+                margin-left: 5px;
+            }
+        }
+
+        p {
+            display: flex;
+            font-size: 15px;
+            color: var(--blackColor);
+            margin-bottom: 10px;
+
+            span {
+                font-weight: bold;
+                margin-left: 5px;
+            }
+        }
+
+        .main-router {
+            display: flex;
+            font-size: 15px;
+            color: var(--blackColor);
+
+            span {
+                font-weight: bold;
+                margin-left: 5px;
+            }
+        }
+
+        .line {
+            width: 100%;
+            height: 1px;
+            background: var(--mainColor-2);
+            opacity: 0.4;
+            margin: 15px 0 0;
+        }
+
+        .list-items {
+            display: block;
+            width: 60%;
+
+            li {
+                border-left: 0;
+                display: inline-block;
+                padding: 6px 10px;
+                background: var(--mainColor-2);
+                margin-left: 5px;
+                border-radius: 50px;
+                font-size: 14px;
+                margin-bottom: 7px;
+            }
+        }
+
+        ul {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            li {
+                margin: 0 0px;
+                border-left: 1px solid #255048;
+                padding: 5px 15px;
+
+                button {
+                    content: '';
+
+                    .delete {
+                        color: crimson;
+                    }
+
+                    .edit {
+                        color: #ff9800;
+                    }
+                }
+
+                &:last-of-type {
+                    border-left: 0;
+                }
+            }
+        }
+    }
+
+    .logo-hidden {
+        opacity: 0.1;
+        position: absolute;
+        bottom: 50px;
+        right: 0;
+        left: 0;
+        margin: auto;
+        width: 200px;
+        z-index: 0;
+
+        img {
+            width: 100%;
+        }
+    }
+}

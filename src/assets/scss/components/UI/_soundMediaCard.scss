@@ -1,0 +1,125 @@
+.media_card_content_wrapper {
+  width: 350px;
+  overflow: hidden;
+  .media_elemets {
+    overflow: hidden;
+    border-radius: 15px;
+    position: relative;
+    .audio_tag {
+      display: none;
+    }
+    .media_image {
+      width: 350px;
+      height: 400px;  
+      object-fit: cover;
+    }
+    .control_media_btns_wrapper {
+      position: absolute;
+      inset: 0;
+      background-color: rgba(0, 0, 0, 0.6);
+      @include flexCenterAlignment;
+
+      .add_by_content_wrapper {
+        position: absolute;
+        top: 10px;
+        left: 0;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        justify-content: center;
+        column-gap: 10px;
+        .wrapper {
+          width: 100%;
+          @include flexSpaceBetweenAlignment;
+          column-gap: 10px;
+          .videos_count {
+            padding:  4px 8px;
+            @include flexCenterAlignment;
+            column-gap: 5px;
+            span,
+            svg, 
+            i {
+              background-image: linear-gradient(to right, var(--mainColor-2), var(--secondColor));
+              -webkit-background-clip: text;
+              -webkit-text-fill-color: transparent;
+            }
+  
+            span {
+              font-size: 18px;
+            }
+  
+            svg, 
+            i {
+              font-size: 22px;
+            }
+          }
+          .user_content_wrapper {
+            padding-block: 10px 2px;
+            padding-inline: 5px 15px;
+            @include flexEndAlignment;
+            column-gap: 10px;
+            .name {
+              font-size: 15px;
+            }
+            .avatar {
+              img {
+                border-radius: 50%;
+                object-fit: cover;
+              }
+            }
+          }
+        }
+        .track_name {
+          padding-inline: 5px 15px;
+          margin-block: 0;
+          font-size: 16px;
+          text-align: center;
+        }
+      }
+      
+      button {
+        width: 80px;
+        height: 80px;
+        border: 1px solid #fff;
+        border-radius: 50%;
+        &.paus_btn {
+          display: none;
+        } 
+        @include flexCenterAlignment;
+        i, svg {
+          font-size: 25px;
+        }
+      }
+    }
+  }
+  .info_and_actions {
+    margin-top: 5px;
+    .track_name {
+      margin-block: 8px 12px;
+      text-align: center;
+      color: var(--blackColor);
+      font-size: 17px;
+    }
+    .action_buttons {
+      @include flexCenterAlignment;
+      column-gap: 25px;
+
+      button {
+        font-size: 18px;
+        &.edit{
+          svg, 
+          i {
+            color: var(--warning);
+          }
+        }
+        &.delete{
+          svg, 
+          i {
+            color: var(--danger);
+          }
+        }
+      }
+    }
+  }
+}

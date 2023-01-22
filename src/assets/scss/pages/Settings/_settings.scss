@@ -1,0 +1,55 @@
+.all_settings {
+    position: relative;
+
+    .settings_tabs {
+        margin-bottom: 20px;
+        border-bottom: 1px dashed var(--blackColor);
+        padding: 20px;
+
+        .nav_pills {
+            @include flexCenterAlignment;
+
+            .nav_item {
+                margin-inline-end: 10px;
+
+                .nav_link {
+                    background-color: var(--mainColor-2);
+                    @include flexCenterAlignment;
+                    width: 150px;
+                    height: 45px;
+                    border-radius: 15px 7px 15px 7px;
+                    font-size: var(--Small);
+                }
+            }
+        }
+    }
+
+    .setting_tabs_content {
+        .setting_content {
+            .setting_content_header {
+                @include flexSpaceBetweenAlignment;
+                margin-bottom: 35px;
+            }
+
+            .settings_content_body {
+                p {
+                    font-size: calc(var(--Small) + 1px);
+                    line-height: 1.8;
+                }
+
+                .image_settings {
+                    display: flex;
+                    margin-bottom: 25px;
+                    img {
+                        margin: 0 auto;
+                        width: 200px;
+                        height: 200px;
+                        border: 1px dashed var(--blackColor);
+                        padding: 15px;
+                        @include borderRadius(15px);
+                    }
+                }
+            }
+        }
+    }
+}

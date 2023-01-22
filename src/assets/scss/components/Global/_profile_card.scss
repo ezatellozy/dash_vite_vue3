@@ -1,0 +1,76 @@
+.profile_card {
+  @include flexCenterAlignment;
+  padding: 30px;
+  border-radius: 70px 20px 70px 20px;
+  position: relative;
+  z-index: 5;
+  box-shadow: 0 0 10px #ebebeb;
+  .profile_card_component {
+    position: relative;
+    z-index: 2;
+    a {
+      @include flexCenterAlignment;
+      flex-direction: column;
+    }
+    .icon {
+      width: 90px;
+      height: 90px;
+      position: relative;
+      @include flexCenterAlignment;
+      @include borderRadius(50%);
+      margin-bottom: 15px;
+      span {
+        font-size: var(--extraLarge);
+      }
+      &::after {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        left: 0;
+        top: 0;
+        content: "";
+        border: 2px solid var(--mainColor-2_2);
+        border-radius: 50%;
+        border-top-color: transparent !important;
+        border-bottom-color: transparent !important;
+        -webkit-animation: rotation 6s infinite linear;
+        -o-animation: rotation 6s infinite linear;
+        animation: rotation 6s infinite linear;
+      }
+    }
+    span.title {
+      font-size: var(--Large);
+    }
+  }
+  &::before {
+    content: "";
+    width: 95%;
+    height: 95%;
+    z-index: -3;
+    position: absolute;
+    top: auto;
+    bottom: 1px;
+    left: 1px;
+    border-radius: 70px 20px 70px 20px;
+    background: var(--mainColor-2_2);
+    outline: 1px solid transparent;
+    transition: all 0.5s;
+  }
+  &::after {
+    content: " ";
+    width: 100%;
+    height: 100%;
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: var(--cardBgColor);
+    border-radius: 70px 20px 70px 20px;
+    z-index: 1;
+  }
+  &:hover {
+    &::before {
+      transform: translateX(-15px) translateY(-25px);
+    }
+  }
+}

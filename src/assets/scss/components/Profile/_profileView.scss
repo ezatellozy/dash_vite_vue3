@@ -1,0 +1,82 @@
+.profile_wrapper {
+  .profile_header_wrapper {
+    position: relative;
+    height: 220px;
+    margin-bottom: 40px;
+    #particles-js {
+      height: 210px;
+      width: 100%;
+    }
+    .profile_header_data {
+      position: absolute;
+      bottom: -40px;
+      padding-inline: 30px;
+      width: 100%;
+      @include flexSpaceBetweenAlignment;
+      .avatar_wrapper {
+        width: 135px;
+        height: 135px;
+        background-color: var(--mainBgColor);
+        border: 1px solid var(--mainBgColor);
+        @include borderRadius(50%);
+        @include flexCenterAlignment;
+        img {
+          width: 120px;
+          height: 120px;
+          @include borderRadius(50%);
+          object-fit: cover;
+        }
+      }
+      .edit_route_wrapper {
+        position: relative;
+        bottom: -25px;
+        width: 50px;
+        height: 50px;
+        background-color: var(--mainBgColor);
+        background-color: var(--mainBgColor);
+        border: 1px solid var(--mainBgColor);
+        @include borderRadius(50%);
+        @include flexCenterAlignment;
+        a {
+          font-size: 22px;
+        }
+      }
+    }
+  }
+  &.most_profile {
+    .profile_header_data {
+      @include flexStartAlignment;
+      .name_wrapper {
+        margin-inline-start: 10px;
+        color: #fff;
+        h4 {
+          font-size: calc(var(--Meduim) + 2px);
+        }
+      }
+    }
+  }
+}
+
+.personal_data_wrapper {
+  .customer {
+    background: #fff;
+    box-shadow: 0 0 10px #ffedee;
+    .item {
+      @include flexSpaceBetweenAlignment;
+      padding: 10px 15px;
+      color: #cd201f;
+      border-right: 4px solid #cd201f;
+      font-size: 15px;
+      font-weight: 600;
+      .icon {
+        background-color: #fff9f9;
+        border: 2px dashed #cd201f;
+        border-radius: 7px;
+        i {
+          font-size: 19px;
+          color: #cd201f;
+        }
+      }
+    }
+  }
+}

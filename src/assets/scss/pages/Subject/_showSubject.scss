@@ -1,0 +1,182 @@
+.showSubject {
+  .leassonInfo {
+    .infoSection {
+      padding: 10px;
+      border: 1px solid var(--borderColor);
+      border-radius: 15px;
+
+      h3 {
+        color: var(--blackColor);
+      }
+
+      p {
+        color: var(--mainColor-1);
+        font-size: 15px;
+      }
+    }
+  }
+
+  .files {
+    .file {
+      display: flex;
+      justify-content: space-between;
+
+      span.icon {
+        cursor: pointer;
+      }
+      span.file_name {
+      }
+    }
+  }
+
+  .rates {
+    h3 {
+      color: var(--blackColor);
+    }
+
+    .time {
+      display: flex;
+
+      .item {
+        margin: 2px;
+
+        .val {
+          font-weight: bold;
+          color: var(--blackColor);
+          font-size: 14px !important;
+        }
+
+        .title {
+          color: var(--mainColor-1);
+          font-size: 14px !important;
+        }
+      }
+    }
+
+    .rate {
+      display: flex;
+      background-color: #fff8cc;
+      padding: 5px;
+      width: fit-content;
+      border-radius: 10px;
+
+      & > span {
+        color: #333;
+        font-size: 12px;
+        display: inline-block;
+        margin: 0 3px;
+
+        &.icon {
+          color: gold;
+        }
+      }
+    }
+  }
+
+  .subjectLessons {
+    h3 {
+      color: var(--blackColor);
+    }
+
+    ul.lessons {
+      padding: 20px 0;
+
+      li.lesson {
+        display: flex;
+        align-items: center;
+        margin: 15px 0;
+        padding-inline-end: 15px;
+
+        span.index {
+          color: #b8b8d2;
+          font-size: 30px;
+        }
+
+        .lessonInfo {
+          margin-inline-start: 22px;
+          line-height: 1.2;
+
+          .lessonTitle {
+          }
+
+          .time {
+            display: flex;
+
+            .item {
+              margin: 2px;
+
+              .val {
+                font-weight: bold;
+                color: var(--blackColor);
+                font-size: 14px !important;
+              }
+
+              .title {
+                color: var(--mainColor-1);
+                font-size: 14px !important;
+              }
+            }
+          }
+        }
+
+        .icon {
+          margin-inline-start: auto;
+          font-size: 30px;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+
+  .students {
+    header.header {
+      display: flex;
+      justify-content: space-between;
+      padding: 10px 15px;
+
+      .subscribers {
+        display: flex;
+
+        h3 {
+          margin-inline-end: 5px;
+          color: var(--blackColor);
+        }
+
+        span {
+          color: gray;
+        }
+      }
+    }
+
+    .students_list {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      max-height: 400px;
+      overflow-y: scroll;
+      border: 1.5px solid var(--borderColor);
+      border-radius: 20px;
+      padding: 10px;
+
+      .student {
+        width: 150px;
+        flex-shrink: 0;
+        text-align: center;
+
+        img {
+          width: 110px;
+          height: 110px;
+          border-radius: 50%;
+          margin: 15px auto;
+        }
+
+        h3 {
+          font-size: 20px;
+        }
+      }
+    }
+  }
+
+  .userRates {
+  }
+}

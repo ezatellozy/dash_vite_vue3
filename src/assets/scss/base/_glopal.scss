@@ -1,0 +1,123 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+  font-size: inherit;
+}
+
+html {
+  // font-size: 62.5%; // 1rem = 10px
+  overflow-x: hidden !important;
+}
+
+body {
+  box-sizing: border-box;
+  transition: padding 0.2s linear;
+  position: relative;
+  background: var(--cardBgColor);
+  // background: #fff9f9;
+  min-height: 100vh;
+  padding: 10px;
+
+  .v-application {
+    background: var(--cardBgColor) !important;
+    // background: #fff9f9 !important;
+    color: var(--mainColor-1) !important;
+    font-size: 20px !important;
+    line-height: 1.7 !important;
+    font-family: "Neo Sans Arabic" !important;
+
+    .title {
+      font-family: inherit !important;
+    }
+
+    img {
+      cursor: pointer;
+      object-fit: cover;
+    }
+
+    video {
+      max-width: 100%;
+      height: 200px;
+      margin: 10px auto;
+      display: block;
+      border-radius: 10px;
+    }
+
+    ul {
+      padding: 0;
+      margin: 0;
+      list-style: none;
+    }
+
+    a,
+    a:link,
+    a:visited,
+    a:hover,
+    a:active,
+    a:focus {
+      text-decoration: unset;
+      color: unset;
+    }
+
+    //desc card
+    .desc_card {
+      margin-block: 10px;
+      @include flexSpaceBetweenAlignment;
+      column-gap: 8px;
+      background: var(--cardBgColor);
+      border: 1px solid var(--cardBgColor) !important;
+      border-radius: 10px !important;
+      margin-block: 0 !important;
+      position: relative;
+      overflow: hidden;
+
+      .desc_text {
+        h4 {
+          font-size: 21px;
+          color: var(--mainColor-2);
+        }
+
+        p {
+          font-size: 15px;
+          color: var(--blackColor);
+          margin-bottom: 0;
+        }
+      }
+
+      .image {
+        img {
+          width: 130px;
+          height: 80px;
+          opacity: 0.3;
+        }
+      }
+    }
+  }
+}
+
+/**** Scroll Style ****/
+
+::-webkit-scrollbar {
+  width: 5px !important;
+  height: 4px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent !important;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--mainColor-1_1) !important;
+  border-radius: 6px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--mainColor-1_1) !important;
+}
+
+.mdi-menu-down::before {
+  content: "\F0140";
+}
